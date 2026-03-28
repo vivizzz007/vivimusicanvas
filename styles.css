@@ -170,12 +170,110 @@ header p {
     font-weight: bold;
 }
 
-.empty-state, .error-state {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-secondary);
-    font-size: 1.1rem;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Glassmorphism Cards */
+.canvas-card {
     background: var(--card-bg);
-    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+}
+
+.canvas-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    border-color: rgba(255,255,255,0.25);
+}
+
+.video-preview {
+    width: 100%;
+    aspect-ratio: 9/16;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+}
+
+.video-preview video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.canvas-card:hover .video-preview video {
+    transform: scale(1.08); /* slight zoom on hover */
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(13, 14, 21, 0.95) 0%, transparent 100%);
+    z-index: 1;
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    z-index: 2;
+    transform: translateY(0);
+}
+
+.card-info h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.2;
+}
+
+.card-info h3 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--card-border);
+    border-bottom-color: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: 4rem auto;
+    grid-column: 1 / -1;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.empty-state, .error-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    background: var(--card-bg);
+    border-radius: 24px;
     border: 1px dashed var(--card-border);
 }

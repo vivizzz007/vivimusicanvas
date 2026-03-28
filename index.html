@@ -26,11 +26,19 @@
             <span id="song-count">Loading songs...</span>
         </section>
 
-        <!-- Main Track List -->
+        <!-- Track List Section for quick checking -->
         <section class="track-list-container" id="track-list-wrapper">
             <div id="track-list">
                 <!-- Tracks rendered here -->
             </div>
+        </section>
+
+        <section id="gallery-title" class="status-bar">
+            <span>Visual Gallery</span>
+        </section>
+
+        <section id="canvas-grid" class="grid">
+            <div class="loader" id="loading-spinner"></div>
         </section>
     </main>
 
@@ -49,23 +57,26 @@
                 document.getElementById('song-count').textContent = `${allItems.length} songs added`;
             } catch (error) {
                 console.error(error);
-                document.getElementById('track-list').innerHTML = `
+                document.getElementById('canvas-grid').innerHTML = `
                     <p class="error-state">Failed to load the canvas directory. Please verify that canvas.json exists.</p>
                 `;
             }
         }
 
         function renderCanvases(items) {
+            const grid = document.getElementById('canvas-grid');
             const trackList = document.getElementById('track-list');
+            grid.innerHTML = ''; 
             trackList.innerHTML = '';
 
             if(items.length === 0) {
+                grid.innerHTML = '<p class="empty-state">No matching songs found.</p>';
                 trackList.innerHTML = '<p class="empty-state" style="padding: 1rem;">No matching tracks in the database.</p>';
                 return;
             }
 
             items.forEach((item, index) => {
-                // Render Simple List Item
+                // Render List Item (The Track Checkbox/Checklist)
                 const trackItem = document.createElement('div');
                 trackItem.className = 'track-item';
                 trackItem.innerHTML = `
@@ -76,6 +87,25 @@
                     <div class="status-badge">Available</div>
                 `;
                 trackList.appendChild(trackItem);
+
+                // Render Original Gallery Card
+                const card = document.createElement('article');
+                card.className = 'canvas-card';
+                card.innerHTML = `
+                    <div class="card-content">
+                        <div class="video-preview">
+                            <video loop muted onmouseover="this.play()" onmouseout="this.pause()">
+                                <source src="${item.url}" type="video/mp4">
+                            </video>
+                            <div class="overlay"></div>
+                            <div class="card-info">
+                                <h2>${item.song}</h2>
+                                <h3>${item.artist}</h3>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
             });
         }
 
