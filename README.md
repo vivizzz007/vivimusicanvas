@@ -31,7 +31,17 @@ Make sure your URL points to your deployed Vercel domain!
 ```
 
 ### 3. Commit and Push
-Once you have uploaded your video and updated `canvas.json`, simply commit your changes and push them to GitHub. 
+Once you have uploaded your video and updated `canvas.json`, simply commit your changes and push them to GitHub.
+
+> [!IMPORTANT]
+> When opening a **Pull Request**, please include the **original song/album link** (YouTube Music, Spotify, or similar) in the description. This helps us verify the metadata and ensure the canvas matches the correct track.
+
+**Pull Request Example:**
+> **Title:** `feat: added canvas for Blinding Lights by The Weeknd`
+> **Description:**
+> - Added `Song/20.m3u8`
+> - Updated `canvas.json` mapping for "Blinding Lights"
+> - **Original Link:** https://music.youtube.com/watch?v=4NRXx6U8ABQ
 
 ```bash
 git add .
