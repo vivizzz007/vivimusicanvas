@@ -1,0 +1,14 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-TARGETDURATION:2
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXTINF:2.000000,
+https://cdn.jsdelivr.net/gh/Archimetrix/canvas-storage@main/songs/30baarishmeinphir/30_000.ts
+#EXTINF:2.000000,
+https://cdn.jsdelivr.net/gh/Archimetrix/canvas-storage@main/songs/30baarishmeinphir/30_001.ts
+#EXTINF:2.000000,
+https://cdn.jsdelivr.net/gh/Archimetrix/canvas-storage@main/songs/30baarishmeinphir/30_002.ts
+#EXTINF:1.480000,
+https://cdn.jsdelivr.net/gh/Archimetrix/canvas-storage@main/songs/30baarishmeinphir/30_003.ts
+#EXT-X-ENDLIST
