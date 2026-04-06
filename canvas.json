@@ -879,6 +879,51 @@
       "song": "Ocean Eyes",
       "artist": "Billie Eilish",
       "url": "https://vivimusicanvas-mtih.vercel.app/Song/31.m3u8"
+    },
+    {
+      "song": "Funk Sereno",
+      "artist": "Dysmane",
+      "url": "https://vivimusicanvas-q75m.vercel.app/Album/2.m3u8"
+    },
+    {
+      "song": "Funk Sereno(Slowed)",
+      "artist": "Dysmane",
+      "url": "https://vivimusicanvas-q75m.vercel.app/Album/2.m3u8"
+    },
+    {
+      "song": "Funk Sereno(Super Slowed)",
+      "artist": "Dysmane",
+      "url": "https://vivimusicanvas-q75m.vercel.app/Album/2.m3u8"
+    },
+    {
+      "song": "Funk Sereno(sped Up)",
+      "artist": "Dysmane",
+      "url": "https://vivimusicanvas-q75m.vercel.app/Album/2.m3u8"
+    },
+    {
+      "song": "Risa",
+      "artist": "Nateki",
+      "url": "https://vivimusicanvas-q75m.vercel.app/Album/3.m3u8"
+    },
+    {
+      "song": "Risa(Sped Up)",
+      "artist": "Nateki",
+      "url": "https://vivimusicanvas-q75m.vercel.app/Album/3.m3u8"
+    },
+    {
+      "song": "Risa(Slowed)",
+      "artist": "Nateki",
+      "url": "https://vivimusicanvas-q75m.vercel.app/Album/3.m3u8"
+    },
+    {
+      "song": "Risa(Super Slowed)",
+      "artist": "Nateki",
+      "url": "https://vivimusicanvas-q75m.vercel.app/Album/3.m3u8"
+    },
+    {
+      "song": "Risa(Ultra Slowed)",
+      "artist": "Nateki",
+      "url": "https://vivimusicanvas-q75m.vercel.app/Album/3.m3u8"
     }
   ]
 }
